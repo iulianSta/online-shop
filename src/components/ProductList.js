@@ -12,12 +12,10 @@ const ProductList = ({ data }) => {
   const items = data.map((item, i) => (
     <ProductItem key={i} info={item} addToCart={addToCart} />
   ));
-  useEffect(() => {
-    console.log("Hello");
-  });
 
   const bill = () =>
     setTotalBill(cart.reduce((acc, cur) => acc + cur.price, 0));
+  console.log(setTotalBill);
   return (
     <React.Fragment>
       <div>
