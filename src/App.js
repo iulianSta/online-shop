@@ -28,7 +28,7 @@ function App() {
     <React.Fragment>
       <h1>Welcome to Iulian's Online Shop</h1>
       <h3>Please submit your desired product</h3>
-      <form onSubmit={submitHandle}>
+      <form className="form-area" onSubmit={submitHandle}>
         <input type="text" onChange={changeHandle} value={userInput} />
         <input type="submit" value="filter" />
       </form>
