@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
 
 const ProductList = ({ data }) => {
@@ -6,11 +6,15 @@ const ProductList = ({ data }) => {
   const [totalBill, setTotalBill] = useState(0);
   const addToCart = (item) => {
     setCart((prevState) => [...prevState, item]);
-    //console.log(cart);
+    console.log(cart);
+    console.log(setCart);
   };
   const items = data.map((item, i) => (
     <ProductItem key={i} info={item} addToCart={addToCart} />
   ));
+  useEffect(() => {
+    console.log("Hello");
+  });
 
   const bill = () =>
     setTotalBill(cart.reduce((acc, cur) => acc + cur.price, 0));
