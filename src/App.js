@@ -32,7 +32,7 @@ function App() {
         <input type="text" onChange={changeHandle} value={userInput} />
         <input type="submit" value="filter" />
       </form>
-      <ProductList data={userInput ? filteredData : data} />
+      <ProductList data={userInput ? filteredData : data} setData={setData} />
     </React.Fragment>
   );
 }
