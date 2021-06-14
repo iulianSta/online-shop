@@ -4,18 +4,20 @@ import ProductItem from "./ProductItem";
 const ProductList = ({ data }) => {
   const [cart, setCart] = useState([]);
   const [totalBill, setTotalBill] = useState(0);
-  const addToCart = (item) => {
-    setCart((prevState) => [...prevState, item]);
-    console.log(cart);
-    console.log(setCart);
+
+  const addToCart = (info) => {
+    setCart((prevState) => [...prevState, info]);
   };
+  console.log(cart);
+
   const items = data.map((item, i) => (
     <ProductItem key={i} info={item} addToCart={addToCart} />
   ));
 
-  const bill = () =>
+  const bill = () => {
     setTotalBill(cart.reduce((acc, cur) => acc + cur.price, 0));
-  console.log(setTotalBill);
+    console.log(setTotalBill);
+  };
   return (
     <React.Fragment>
       <div className="bill">
