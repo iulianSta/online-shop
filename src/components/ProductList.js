@@ -5,7 +5,7 @@ const ProductList = ({ data }) => {
   const [cart, setCart] = useState([]);
   const [totalBill, setTotalBill] = useState(0);
   const addToCart = (item) => {
-    setCart((prevState) => [item, ...prevState]);
+    setCart((prevState) => [...prevState, item]);
     //console.log(cart);
   };
   const items = data.map((item, i) => (
